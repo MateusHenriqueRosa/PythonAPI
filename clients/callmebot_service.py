@@ -11,15 +11,7 @@ class CallMeBotService:
             self.__apikey = config.get("apikey")
             self.__telefone = config.get("telefone")
 
-    def send_message(self, phone_number, message):
-        response = requests.get(
-            url=f"{self.__base_url}?phone={phone_number}&text={message}&apikey={self.__apikey}"
-        )
-        if response.status_code == 404:
-            return response.json().get("message")
-        return response.json()
-
-    def send_image(self, message):
+    def send_message(self, message):
         response = requests.get(
             url=f"{self.__base_url}?phone={self.__telefone}&text={message}&apikey={self.__apikey}"
         )

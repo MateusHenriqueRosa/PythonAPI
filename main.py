@@ -10,4 +10,4 @@ if __name__ == "__main__":
     conversao = client.converter("BTC", "BRL")
 
     wpp_service = CallMeBotService(arquivo_configuracao)
-    texto,status = wpp_service.send_image(message=f"Valor do BTC: R${conversao}")
+    texto, status = wpp_service.send_message(message=f"Valor do BTC: R${conversao}")
